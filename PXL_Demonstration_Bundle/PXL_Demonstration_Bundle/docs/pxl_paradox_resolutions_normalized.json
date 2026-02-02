@@ -1,0 +1,112 @@
+{
+  "doc_id": "pxl_paradox_resolutions",
+  "source": "docs/source/PXL_Paradox_Resolution.txt",
+  "last_normalized": "2026-02-02",
+  "total_sections": 8,
+  "sections": [
+    {
+      "section_id": "formal_citation_claim",
+      "title": "Formal Citation Claim",
+      "claim_type": "meta_claim",
+      "maps_to": [],
+      "formal_anchor": null,
+      "authority": "to_formalize",
+      "status": "unsupported",
+      "txt_claim": "Formal Citation (Coq Artifacts): Module: PXL_ObjectLanguage.v — stratified syntax of Form levels; Module: PXL_WellFormedness.v — well-formedness blockers; Lemmas: pack_level_eq, no_same_level_truth_term, no_liar_fixed_point_term, no_curry_fixed_point_term",
+      "coq_definition": null,
+      "match_quality": "n/a",
+      "notes": "CRITICAL: PXL_ObjectLanguage.v does not exist in proof_index.json. PXL_WellFormedness.v exists (pxl_wellformedness) but summary only mentions 'Smoke test: axiom set well-formedness' with no mention of paradox resolution lemmas. Claimed lemmas (pack_level_eq, no_liar_fixed_point_term, no_curry_fixed_point_term) not found in proof_index.json."
+    },
+    {
+      "section_id": "paradox_liar",
+      "title": "1. Liar Paradox",
+      "claim_type": "paradox_resolution",
+      "maps_to": [],
+      "formal_anchor": null,
+      "authority": "to_formalize",
+      "status": "unsupported",
+      "txt_claim": "Statement: 'This sentence is false.' Formal Dissolution (PXL): Let L = self-referential proposition. Traditional: L ↔ ¬L (contradiction). PXL Analysis: ∀x ∈ 𝕆: (𝕀₁(x) ∧ 𝕀₂(¬x) ∧ 𝕀₃(x ∨ ¬x)) ⟹ ¬(x ≀ ¬x); □(L ∈ 𝕆) ⟹ (𝕀₁(L) ⊗ 𝕀₂(¬L)) = ⊥. In stratified object-language Form, liar fixed point is untypable. Formally: no_liar_fixed_point_term (PXL_WellFormedness) blocks any Packed equality between L : Form level and FNot (FTruth L) : Form (S level). Therefore L is not admissible (not in 𝕆).",
+      "coq_definition": null,
+      "match_quality": "n/a",
+      "notes": "CRITICAL UNRESOLVED: No formal proof exists. Claimed lemma 'no_liar_fixed_point_term' not found in proof_index.json. PXL_WellFormedness.v exists but does not mention liar paradox resolution. Conceptual approach only."
+    },
+    {
+      "section_id": "paradox_russell",
+      "title": "2. Russell's Paradox",
+      "claim_type": "paradox_resolution",
+      "maps_to": [],
+      "formal_anchor": null,
+      "authority": "to_formalize",
+      "status": "unsupported",
+      "txt_claim": "Statement: Let R = {x | x ∉ x}. Does R ∈ R? Formal Dissolution (PXL): Let R = proposed set of all sets not containing themselves. Traditional: R ∈ R ↔ R ∉ R (contradiction). PXL Analysis: Set formation requires: □(∃S)(𝕀₁(S) ∧ ∀x ∈ S: 𝕀₁(x)). R attempts definition: R = {x | ¬(x ∈ x)}. Identity check: 𝕀₁(R) requires R to be well-defined before membership test. But R's definition is: R ∈ R ⟺ ¬(R ∈ R). This creates: 𝕀₁(R) ⊗ 𝕀₂(¬(R ∈ R)) = ⊥. Resolution: R ∉ Dom(𝕀₁) ∴ R is not a set in 𝕆.",
+      "coq_definition": null,
+      "match_quality": "n/a",
+      "notes": "UNRESOLVED: No formal proof exists in proof_index.json. Conceptual approach only."
+    },
+    {
+      "section_id": "paradox_curry",
+      "title": "3. Curry's Paradox",
+      "claim_type": "paradox_resolution",
+      "maps_to": [],
+      "formal_anchor": null,
+      "authority": "to_formalize",
+      "status": "unsupported",
+      "txt_claim": "Statement: Let C = 'If this sentence is true, then P' for arbitrary P. Formal Dissolution (PXL): Let C = (C → P) for arbitrary proposition P. Traditional: C proves any P (logical explosion). PXL Analysis: Assume C ∈ 𝕆, then 𝕀₁(C) must hold. C ≡ (C → P) requires identity evaluation before implication. But 𝕀₁(C) = 𝕀₁(C → P) creates reflexive dependency. Modal priority violated: (𝕀₁(C) → 𝕀₁(C → P)) → 𝕀₁(C). This is circular grounding: 𝕀₁(C) ⊗ (C → 𝕀₁(C)) = ⊥. Stratified Form forbids equating C with FImp (FTruth C) P at the same level. Formally: no_curry_fixed_point_term (PXL_WellFormedness) blocks any Packed equality between C : Form level and FImp (FTruth C) P : Form (S level). Therefore C is not admissible (not in 𝕆).",
+      "coq_definition": null,
+      "match_quality": "n/a",
+      "notes": "CRITICAL UNRESOLVED: No formal proof exists. Claimed lemma 'no_curry_fixed_point_term' not found in proof_index.json. Conceptual approach only."
+    },
+    {
+      "section_id": "paradox_ship_theseus",
+      "title": "23. Ship of Theseus (Identity Paradox)",
+      "claim_type": "paradox_resolution",
+      "maps_to": [],
+      "formal_anchor": null,
+      "authority": "to_formalize",
+      "status": "unsupported",
+      "txt_claim": "Statement: If a ship's parts are replaced gradually until none of the original parts remain, is it still the same ship? What if the original parts are reassembled? PXL Analysis: Identity 𝕀₁(ship) can ground in multiple criteria: (i) material composition, (ii) functional role, (iii) spatiotemporal continuity, (iv) historical causal chain. Gradual replacement maintains (ii), (iii), (iv) while losing (i). Reassembly maintains (i) partially but breaks (iii) and (iv). Resolution: Identity grounding is multi-modal. No single criterion is privileged. Depending on which 𝕀₁ mode is weighted, different answers are acceptable.",
+      "coq_definition": null,
+      "match_quality": "n/a",
+      "notes": "UNRESOLVED: No formal proof exists in proof_index.json. Conceptual multi-modal identity analysis, not formal resolution."
+    },
+    {
+      "section_id": "paradox_omnipotence",
+      "title": "36. Omnipotence Paradox",
+      "claim_type": "paradox_resolution",
+      "maps_to": [],
+      "formal_anchor": null,
+      "authority": "to_formalize",
+      "status": "unsupported",
+      "txt_claim": "Statement: Can an omnipotent being create a stone so heavy it cannot lift it? PXL Analysis: Let B = omnipotent being, R = 'create stone unliftable by B'. Traditional: If B can do R, B is not omnipotent (cannot lift). If B cannot do R, B is not omnipotent (cannot create). PXL Resolution: R ≡ 'entity E such that □(created_by(E, B) ∧ ¬liftable_by(E, B))'. This requires: B creates E that logically constrains B's power, i.e., B ⟼ ¬(B ⟼ lift(E)). This is: □(B has power P) ∧ □(B creates constraint ¬P). Identity incoherence: B trying to ground ¬B. Such R is not in 𝕆 (domain of coherent being). Omnipotence = power to actualize all coherent possibilities, not incoherent pseudo-descriptions. Paradox dissolves: R is not a possible action but a logically malformed sentence outside 𝕆.",
+      "coq_definition": null,
+      "match_quality": "n/a",
+      "notes": "CRITICAL UNRESOLVED: No formal proof exists in proof_index.json. Conceptual analysis only. TXT claims dissolution but provides no formal proof or lemma reference."
+    },
+    {
+      "section_id": "summary_methodology",
+      "title": "Summary of PXL Dissolution Methodology",
+      "claim_type": "methodological_summary",
+      "maps_to": [],
+      "formal_anchor": null,
+      "authority": "explanatory_only",
+      "status": "non-formal",
+      "txt_claim": "Common Patterns in Paradox Dissolution: 1. Self-Referential Paradoxes (Liar, Curry, Quine, Grelling-Nelson): Violation: Circular identity grounding—attempting to establish 𝕀₁ via operations that presuppose 𝕀₁. Resolution: Entities fail 𝕀₁-grounding requirement, exist outside 𝕆. 2. Set-Theoretic Paradoxes (Russell, Barber, Banach-Tarski): Violation: Attempting collection/entity formation without determinate identity criteria. Resolution: Purported sets/entities shown to be 𝕀₁-incoherent, thus non-existent in 𝕆. 3-8. [Additional patterns listed].",
+      "coq_definition": null,
+      "match_quality": "n/a",
+      "notes": "Methodological summary of conceptual approach. No formal proofs provided. Explanatory framework only."
+    },
+    {
+      "section_id": "summary_conclusion",
+      "title": "Paradox Resolution Conclusion",
+      "claim_type": "conclusion",
+      "maps_to": [],
+      "formal_anchor": null,
+      "authority": "to_formalize",
+      "status": "unsupported",
+      "txt_claim": "All paradoxes resolved categorically: either shown to be pseudo-entities outside 𝕆 (domain of being), or revealed as counterintuitive but valid theorems, or dissolved through proper modal/causal/probabilistic analysis.",
+      "coq_definition": null,
+      "match_quality": "n/a",
+      "notes": "CRITICAL OVERCLAIM: TXT asserts 'All paradoxes resolved categorically' but zero formal proofs exist in proof_index.json for any of the 42 paradoxes listed. This is a sweeping claim without formal backing. Must be marked to_formalize."
+    }
+  ]
+}

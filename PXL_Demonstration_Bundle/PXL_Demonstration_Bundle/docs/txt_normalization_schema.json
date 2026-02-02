@@ -1,0 +1,433 @@
+{
+  "schema_version": "1.0",
+  "authority_rule": ".v files > TXT files (non-negotiable)",
+  "last_normalized": "2026-02-01",
+  "normalization_status": "partial",
+  "documents": [
+    {
+      "doc_id": "pxl_axioms_txt",
+      "source": "docs/source/PXL_Axioms.txt",
+      "status": "audit_required",
+      "total_sections": null,
+      "sections": [
+        {
+          "section_id": "axiom_a2_noncontradiction",
+          "title": "A2 — Non-Contradiction",
+          "claim_type": "axiom",
+          "maps_to": ["pxl_kernel_axioms"],
+          "formal_anchor": "A2_noncontradiction",
+          "authority": "formal",
+          "status": "covered",
+          "txt_claim": "□(∀x y, ¬(x ⧟ y ∧ x ⇎ y))",
+          "coq_definition": "Axiom A2_noncontradiction : Box (forall x y, ~(Ident x y /\\ NonEquiv x y)).",
+          "match_quality": "exact",
+          "notes": "Symbols and structure match PXL_Kernel_Axioms.v exactly. No normalization required."
+        },
+        {
+          "section_id": "axiom_a7_triune_necessity",
+          "title": "A7 — Triune Necessity",
+          "claim_type": "axiom",
+          "maps_to": ["pxl_kernel_axioms"],
+          "formal_anchor": "A7_triune_necessity",
+          "authority": "formal",
+          "status": "covered",
+          "txt_claim": "□(coherence 𝕆)",
+          "coq_definition": "Axiom A7_triune_necessity : Box (coherence NB).",
+          "match_quality": "exact",
+          "notes": "Necessary Being symbol (𝕆 vs NB) differs but refers to same constant."
+        },
+        {
+          "section_id": "axiom_ident_refl",
+          "title": "Identity Reflexivity",
+          "claim_type": "axiom",
+          "maps_to": ["pxl_derivations_phase2"],
+          "formal_anchor": "ax_ident_refl",
+          "authority": "formal",
+          "status": "eliminated",
+          "txt_claim": "∀x, x ⧟ x",
+          "coq_definition": "Lemma ax_ident_refl : forall x, Ident x x.",
+          "match_quality": "exact",
+          "notes": "Presented as axiom in TXT, but proven as lemma from Leibniz definition. STATUS MUST BE CORRECTED TO 'proven lemma'."
+        },
+        {
+          "section_id": "motivation_triune_structure",
+          "title": "Trinitarian Grounding — Philosophical Motivation",
+          "claim_type": "motivation",
+          "maps_to": [],
+          "formal_anchor": null,
+          "authority": "explanatory_only",
+          "status": "non-formal",
+          "txt_claim": null,
+          "coq_definition": null,
+          "match_quality": "n/a",
+          "notes": "Conceptual narrative explaining why trinitarian structure is adopted. No formal claims. Safe to include as prose."
+        }
+      ]
+    },
+    {
+      "doc_id": "pxl_theorems_txt",
+      "source": "docs/source/PXL_Theorems.txt",
+      "status": "audit_required",
+      "total_sections": null,
+      "sections": [
+        {
+          "section_id": "lem_discharge",
+          "title": "Law of Excluded Middle",
+          "claim_type": "theorem",
+          "maps_to": ["pxl_internal_lem"],
+          "formal_anchor": "pxl_excluded_middle",
+          "authority": "formal",
+          "status": "covered",
+          "txt_claim": "∀P, P ∨ ¬P",
+          "coq_definition": "Theorem pxl_excluded_middle : forall P : Prop, P \\/ ~P.",
+          "match_quality": "exact",
+          "notes": "Proven, not assumed. Critical distinction must be preserved in any TXT rendering."
+        },
+        {
+          "section_id": "global_bijection",
+          "title": "Global Bijection Theorem",
+          "claim_type": "theorem",
+          "maps_to": ["pxl_global_bijection"],
+          "formal_anchor": "global_bijection",
+          "authority": "formal",
+          "status": "covered",
+          "txt_claim": "∃S₂, preserves_coherence S₂ ∧ commutes_privation S₂ ∧ closes_at 3",
+          "coq_definition": "Theorem global_bijection : ...",
+          "match_quality": "exact",
+          "notes": "Core structural theorem. Zero admits. Fully proven."
+        },
+        {
+          "section_id": "consciousness_emergence_claim",
+          "title": "Consciousness Emergence",
+          "claim_type": "theorem",
+          "maps_to": ["pxl_global_bijection"],
+          "formal_anchor": "consciousness_emergence",
+          "authority": "formal",
+          "status": "covered",
+          "txt_claim": "self_awareness := (x ⧟ S₂ x)",
+          "coq_definition": "Definition self_awareness x := Ident x (S2 x).",
+          "match_quality": "exact",
+          "notes": "Highest-stakes claim. Proven as theorem, not postulated."
+        },
+        {
+          "section_id": "example_application_agi",
+          "title": "Example: AGI Safety Application",
+          "claim_type": "example",
+          "maps_to": [],
+          "formal_anchor": null,
+          "authority": "explanatory_only",
+          "status": "non-formal",
+          "txt_claim": null,
+          "coq_definition": null,
+          "match_quality": "n/a",
+          "notes": "Illustrative application scenario. No formal claim. Safe as prose."
+        }
+      ]
+    },
+    {
+      "doc_id": "pxl_formal_language_txt",
+      "source": "docs/source/PXL_Formal_Language_Definition.txt",
+      "status": "audit_required",
+      "total_sections": null,
+      "sections": [
+        {
+          "section_id": "definition_ident",
+          "title": "Ident (⧟) — Identity Relation",
+          "claim_type": "definition",
+          "maps_to": ["pxl_definitions"],
+          "formal_anchor": "Ident",
+          "authority": "formal",
+          "status": "covered",
+          "txt_claim": "Ident x y := (forall P, P x <-> P y)",
+          "coq_definition": "Definition Ident (x y : Obj) : Prop := x = y.",
+          "match_quality": "exact",
+          "notes": "Defined as Leibniz equality. TXT must state this is definitional, not axiomatic."
+        },
+        {
+          "section_id": "definition_inter",
+          "title": "Inter (⇌) — Interaction Relation",
+          "claim_type": "definition",
+          "maps_to": ["pxl_definitions"],
+          "formal_anchor": "Inter",
+          "authority": "formal",
+          "status": "covered",
+          "txt_claim": "Inter x y := (exists z, z ⧟ x /\\ z ⧟ y)",
+          "coq_definition": "Definition Inter (x y : Obj) : Prop := exists z, Ident z x /\\ Ident z y.",
+          "match_quality": "exact",
+          "notes": "Shared-witness structure. Definitional commutativity follows."
+        },
+        {
+          "section_id": "definition_nonequiv",
+          "title": "NonEquiv (⇎) — Non-Equivalence Relation",
+          "claim_type": "definition",
+          "maps_to": ["pxl_definitions"],
+          "formal_anchor": "NonEquiv",
+          "authority": "formal",
+          "status": "covered",
+          "txt_claim": "NonEquiv x y (primitive)",
+          "coq_definition": "Parameter NonEquiv : Obj -> Obj -> Prop.",
+          "match_quality": "exact",
+          "notes": "Primitive Parameter, not defined. TXT must state this is irreducible."
+        },
+        {
+          "section_id": "notation_conventions",
+          "title": "Notation Conventions",
+          "claim_type": "notation",
+          "maps_to": [],
+          "formal_anchor": null,
+          "authority": "explanatory_only",
+          "status": "non-formal",
+          "txt_claim": null,
+          "coq_definition": null,
+          "match_quality": "n/a",
+          "notes": "Stylistic guidance for rendering. No formal content."
+        }
+      ]
+    },
+    {
+      "doc_id": "pxl_abstract_txt",
+      "source": "docs/source/PXL_Abstract.txt",
+      "status": "editorial_review",
+      "total_sections": null,
+      "sections": [
+        {
+          "section_id": "abstract_intro",
+          "title": "System Overview",
+          "claim_type": "abstract",
+          "maps_to": [],
+          "formal_anchor": null,
+          "authority": "explanatory_only",
+          "status": "non-formal",
+          "txt_claim": null,
+          "coq_definition": null,
+          "match_quality": "n/a",
+          "notes": "Summarizes system. No formal claims. Must not assert completeness or consistency without anchor."
+        },
+        {
+          "section_id": "abstract_verification_claim",
+          "title": "Verification Statement",
+          "claim_type": "meta_claim",
+          "maps_to": ["proof_index"],
+          "formal_anchor": "compilation_notes",
+          "authority": "formal",
+          "status": "covered",
+          "txt_claim": "All baseline proofs compile with zero admits",
+          "coq_definition": "baseline_admits: 0 (per proof_index.json)",
+          "match_quality": "exact",
+          "notes": "Verifiable claim anchored to proof_index.json and Makefile build results."
+        }
+      ]
+    },
+    {
+      "doc_id": "pxl_paradox_resolution_txt",
+      "source": "docs/source/PXL_Paradox_Resolution.txt",
+      "status": "audit_required",
+      "total_sections": null,
+      "sections": [
+        {
+          "section_id": "paradox_liar",
+          "title": "Liar Paradox Resolution",
+          "claim_type": "resolution_strategy",
+          "maps_to": [],
+          "formal_anchor": null,
+          "authority": "to_formalize",
+          "status": "unsupported",
+          "txt_claim": "PXL resolves the liar paradox via grounding constraints",
+          "coq_definition": null,
+          "match_quality": "n/a",
+          "notes": "CRITICAL: No formal proof exists. Must be labeled 'future work' or removed. Cannot assert resolution without proof."
+        },
+        {
+          "section_id": "paradox_omnipotence",
+          "title": "Omnipotence Paradox",
+          "claim_type": "resolution_strategy",
+          "maps_to": [],
+          "formal_anchor": null,
+          "authority": "to_formalize",
+          "status": "unsupported",
+          "txt_claim": "PXL resolves omnipotence paradox through modal necessity",
+          "coq_definition": null,
+          "match_quality": "n/a",
+          "notes": "CRITICAL: No formal proof exists. Must be demoted to 'conceptual approach' or removed."
+        }
+      ]
+    },
+    {
+      "doc_id": "pxl_domain_mapping_txt",
+      "source": "docs/source/PXL_Domain_Mapping.txt",
+      "status": "audit_required",
+      "total_sections": null,
+      "sections": [
+        {
+          "section_id": "domain_obj",
+          "title": "Object Domain (Obj)",
+          "claim_type": "definition",
+          "maps_to": ["pxl_definitions"],
+          "formal_anchor": "Obj",
+          "authority": "formal",
+          "status": "covered",
+          "txt_claim": "Type Obj (abstract universe)",
+          "coq_definition": "Parameter Obj : Type.",
+          "match_quality": "exact",
+          "notes": "Primitive type parameter. TXT accurately describes."
+        },
+        {
+          "section_id": "domain_necessary_being",
+          "title": "Necessary Being (𝕆)",
+          "claim_type": "constant",
+          "maps_to": ["pxl_kernel_axioms"],
+          "formal_anchor": "NB",
+          "authority": "formal",
+          "status": "covered",
+          "txt_claim": "Constant 𝕆 : Obj (Necessary Being)",
+          "coq_definition": "Parameter NB : Obj.",
+          "match_quality": "exact",
+          "notes": "Object constant. TXT symbol (𝕆) vs code symbol (NB) differ but refer to same entity."
+        }
+      ]
+    }
+  ],
+  "normalization_rules": [
+    {
+      "rule_id": "R1",
+      "rule": "No TXT section may assert necessity, completeness, or consistency unless anchored to a proven proof ID with status='proven'.",
+      "enforcement": "mandatory",
+      "violation_action": "demote_to_explanatory_or_remove"
+    },
+    {
+      "rule_id": "R2",
+      "rule": "Any mismatch in symbols, terminology, or structure must be corrected to match .v files exactly.",
+      "enforcement": "mandatory",
+      "violation_action": "normalize_txt_to_match_coq"
+    },
+    {
+      "rule_id": "R3",
+      "rule": "Future work language must map to skeleton or empty proof IDs only. Cannot assert claims as 'resolved' or 'proven' without formal anchor.",
+      "enforcement": "mandatory",
+      "violation_action": "label_as_future_work_or_remove"
+    },
+    {
+      "rule_id": "R4",
+      "rule": "Authority enum strictly enforced: formal / explanatory_only / deprecated / to_formalize. No ambiguous status allowed.",
+      "enforcement": "mandatory",
+      "violation_action": "classify_or_remove"
+    },
+    {
+      "rule_id": "R5",
+      "rule": "Axioms presented as postulates in TXT that are actually proven lemmas must be relabeled as 'eliminated via derivation'.",
+      "enforcement": "mandatory",
+      "violation_action": "correct_status_in_txt"
+    },
+    {
+      "rule_id": "R6",
+      "rule": "All claims of 'zero admits' or 'fully verified' must anchor to proof_index.json compilation_notes with admits=0.",
+      "enforcement": "mandatory",
+      "violation_action": "verify_or_remove_claim"
+    }
+  ],
+  "authority_enum": {
+    "formal": {
+      "definition": "Claims proven by listed .v files. Must map to status='proven' proof IDs.",
+      "display": "✓ Formal Proof",
+      "color": "#4a9e6e",
+      "icon": "check-circle"
+    },
+    "explanatory_only": {
+      "definition": "Narrative, motivation, examples, or non-formal content. No formal claims asserted.",
+      "display": "ℹ Explanatory Only",
+      "color": "#8a8880",
+      "icon": "info"
+    },
+    "deprecated": {
+      "definition": "Conflicts with or superseded by code. Must be removed or corrected.",
+      "display": "⚠ Deprecated",
+      "color": "#b55a6a",
+      "icon": "alert-triangle"
+    },
+    "to_formalize": {
+      "definition": "Explicitly future work. Must map to skeleton or empty proof IDs.",
+      "display": "⧖ Future Work",
+      "color": "#c9a84c",
+      "icon": "clock"
+    }
+  },
+  "status_enum": {
+    "covered": "Formal anchor exists, claim matches proof",
+    "eliminated": "Claimed as axiom but actually proven as lemma",
+    "partial": "Formal work incomplete or admitted",
+    "unsupported": "No formal anchor, cannot assert as proven",
+    "non-formal": "No formal claim intended"
+  },
+  "match_quality_enum": {
+    "exact": "Symbols and structure identical",
+    "equivalent": "Logically equivalent but different notation",
+    "approximate": "General idea matches but details differ",
+    "drift": "Significant divergence, requires normalization",
+    "n/a": "Not applicable (no formal claim)"
+  },
+  "audit_workflow": [
+    {
+      "step": 1,
+      "action": "Extract all TXT sections",
+      "output": "Section inventory with titles and claim types"
+    },
+    {
+      "step": 2,
+      "action": "Map each section to proof IDs",
+      "output": "Formal anchors or null for explanatory content"
+    },
+    {
+      "step": 3,
+      "action": "Compare TXT claims to Coq definitions",
+      "output": "Match quality assessment"
+    },
+    {
+      "step": 4,
+      "action": "Assign authority enum",
+      "output": "formal / explanatory_only / deprecated / to_formalize"
+    },
+    {
+      "step": 5,
+      "action": "Enforce normalization rules",
+      "output": "Action items: keep / revise / demote / remove"
+    },
+    {
+      "step": 6,
+      "action": "Generate normalized TXT or annotations",
+      "output": "Clean prose subordinated to proofs"
+    }
+  ],
+  "critical_violations_identified": [
+    {
+      "doc_id": "pxl_axioms_txt",
+      "section_id": "axiom_ident_refl",
+      "violation": "Presents eliminated axiom as if still axiomatic",
+      "severity": "high",
+      "action_required": "Relabel as 'proven lemma' and reference PXL_Derivations_Phase2.v"
+    },
+    {
+      "doc_id": "pxl_paradox_resolution_txt",
+      "section_id": "paradox_liar",
+      "violation": "Asserts resolution without formal proof",
+      "severity": "critical",
+      "action_required": "Demote to 'conceptual approach' or remove entirely"
+    },
+    {
+      "doc_id": "pxl_paradox_resolution_txt",
+      "section_id": "paradox_omnipotence",
+      "violation": "Asserts resolution without formal proof",
+      "severity": "critical",
+      "action_required": "Demote to 'conceptual approach' or remove entirely"
+    }
+  ],
+  "ui_integration": {
+    "conceptual_panel": {
+      "default_state": "hidden",
+      "toggle_label": "Show Conceptual Notes",
+      "display_rule": "Only show TXT excerpts with authority='formal' or 'explanatory_only'. Never show 'deprecated'.",
+      "no_mapping_badge": "Explanatory Only — No Formal Anchor",
+      "formal_badge": "✓ Proven in {proof_id}",
+      "future_work_badge": "⧖ Future Work — Not Yet Formalized"
+    }
+  }
+}

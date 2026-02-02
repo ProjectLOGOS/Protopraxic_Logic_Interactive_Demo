@@ -1,0 +1,99 @@
+{
+  "doc_id": "pxl_domain_mappings",
+  "source": "docs/source/PXL_Domain_Mapping.txt",
+  "last_normalized": "2026-02-02",
+  "total_sections": 7,
+  "sections": [
+    {
+      "section_id": "domain_intro",
+      "title": "Domain Mapping Introduction",
+      "claim_type": "introduction",
+      "maps_to": [],
+      "formal_anchor": null,
+      "authority": "explanatory_only",
+      "status": "non-formal",
+      "txt_claim": "This document outlines cross-domain deployment applications for the Protopraxic Logic System.",
+      "coq_definition": null,
+      "match_quality": "n/a",
+      "notes": "Introductory statement. Interpretive document describing applications, not formal proofs."
+    },
+    {
+      "section_id": "domain_theology",
+      "title": "1. Theology Domain",
+      "claim_type": "application_domain",
+      "maps_to": [],
+      "formal_anchor": null,
+      "authority": "explanatory_only",
+      "status": "non-formal",
+      "txt_claim": "Coherent trinitarian metaphysics (𝕀₁, 𝕀₂, 𝕀₃); Model divine attributes: truth, love, glory; Exclude incoherent theological models (strict monism, modalism)",
+      "coq_definition": null,
+      "match_quality": "n/a",
+      "notes": "Interpretive application domain. No formal proofs of theological claims exist in proof_index.json. Conceptual framework only."
+    },
+    {
+      "section_id": "domain_metaphysics",
+      "title": "2. Metaphysics Domain",
+      "claim_type": "application_domain",
+      "maps_to": [],
+      "formal_anchor": null,
+      "authority": "explanatory_only",
+      "status": "non-formal",
+      "txt_claim": "Necessity grounded in interdependent identities; Filters contingent vs essential attributes; Eliminates brute facts via modal entailment and triune grounding",
+      "coq_definition": null,
+      "match_quality": "n/a",
+      "notes": "Interpretive application domain. Claims about 'eliminating brute facts' are conceptual, not formally proven. No proof IDs exist for metaphysical necessity claims."
+    },
+    {
+      "section_id": "domain_epistemology",
+      "title": "3. Epistemology Domain",
+      "claim_type": "application_domain",
+      "maps_to": [],
+      "formal_anchor": null,
+      "authority": "explanatory_only",
+      "status": "non-formal",
+      "txt_claim": "Coherence theory of truth formalized via ⧟, ⇌, ⩪; Knowledge: □(Belief ∧ Grounded ∧ Coherent); Rejects relativistic models lacking modal coherence",
+      "coq_definition": null,
+      "match_quality": "n/a",
+      "notes": "Interpretive application domain. Claims about 'coherence theory of truth' and knowledge definition are conceptual proposals, not formal proofs. No epistemic theorems exist in proof_index.json."
+    },
+    {
+      "section_id": "domain_ethics",
+      "title": "4. Ethics Domain",
+      "claim_type": "application_domain",
+      "maps_to": [],
+      "formal_anchor": null,
+      "authority": "explanatory_only",
+      "status": "non-formal",
+      "txt_claim": "Goodness = identity-preserving coherence (⧟); Evil = ∼Coherence = Privation; Moral realism derivable via □(𝕆 ⟼ Good)",
+      "coq_definition": null,
+      "match_quality": "n/a",
+      "notes": "Interpretive application domain. Claims about goodness, evil, and moral realism are conceptual. No ethical theorems exist in proof_index.json. 'Derivable' claim unsupported by formal proof."
+    },
+    {
+      "section_id": "domain_aesthetics",
+      "title": "5. Aesthetics Domain",
+      "claim_type": "application_domain",
+      "maps_to": [],
+      "formal_anchor": null,
+      "authority": "explanatory_only",
+      "status": "non-formal",
+      "txt_claim": "Beauty = modal balance (⇌); Fragmentation → aesthetic incoherence → evaluative decay; Groundable beauty defined as that which instantiates triune harmony",
+      "coq_definition": null,
+      "match_quality": "n/a",
+      "notes": "Interpretive application domain. Claims about beauty and aesthetic properties are conceptual. No aesthetic theorems exist in proof_index.json."
+    },
+    {
+      "section_id": "domain_logic_systems",
+      "title": "6. Logic Systems Domain",
+      "claim_type": "application_domain",
+      "maps_to": [],
+      "formal_anchor": null,
+      "authority": "explanatory_only",
+      "status": "non-formal",
+      "txt_claim": "Completes gaps left in classical logic (LEM, contradiction scope); Distinct symbol set prevents category bleed with Aristotelian/MF logics; Suitable as a coherence-checking overlay for any modal predicate domain",
+      "coq_definition": null,
+      "match_quality": "n/a",
+      "notes": "Interpretive application domain. Claim about 'completing gaps in classical logic' refers to LEM being proven (pxl_internal_lem exists), but broader claim about 'coherence-checking overlay' is conceptual application, not formal theorem."
+    }
+  ]
+}

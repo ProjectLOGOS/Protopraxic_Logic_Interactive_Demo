@@ -1,0 +1,21 @@
+{
+  "doc_id": "example_document",
+  "source": "docs/source/Example_Document.txt",
+  "last_normalized": "2026-02-01",
+  "total_sections": 0,
+  "sections": [
+    {
+      "section_id": "example_section",
+      "title": "Example Section Title",
+      "claim_type": "axiom | theorem | definition | lemma | motivation | example | notation",
+      "maps_to": ["proof_id_1", "proof_id_2"],
+      "formal_anchor": "theorem_name_in_coq",
+      "authority": "formal | explanatory_only | deprecated | to_formalize",
+      "status": "covered | eliminated | partial | unsupported | non-formal",
+      "txt_claim": "Claim as written in TXT file",
+      "coq_definition": "Definition/Theorem as written in .v file",
+      "match_quality": "exact | equivalent | approximate | drift | n/a",
+      "notes": "Additional context, corrections needed, or clarifications"
+    }
+  ]
+}

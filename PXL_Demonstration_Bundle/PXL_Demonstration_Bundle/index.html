@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PXL — Protopraxic Logic</title>
+  <link rel="stylesheet" href="css/pxl.css" />
+  
+  <!-- jsCoq Resources -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jscoq@0.18.1/dist/frontend/classic/css/jscoq.css" />
+  <script src="https://cdn.jsdelivr.net/npm/jscoq@0.18.1/dist/frontend/classic/js/jscoq.js"></script>
+  
+  <script src="js/jscoq_loader.js"></script>
+  <script src="js/conceptual_panel.js" defer></script>
+  <script src="js/app.js" defer></script>
+</head>
+
+<body>
+  <header id="top-bar">
+    <div class="header-content">
+      <div class="title-block">
+        <span class="system-name">PXL</span>
+        <span class="system-subtitle">Protopraxic Logic</span>
+      </div>
+      <div class="metadata">
+        <span id="version-badge">PXLv3</span>
+        <span id="file-count">0 files</span>
+        <span id="axiom-count">8 axioms</span>
+        <span id="admit-count">0 admits</span>
+      </div>
+    </div>
+  </header>
+
+  <main id="workspace">
+
+    <!-- LEFT: NAVIGATION PANEL -->
+    <aside id="nav-panel">
+      <div class="panel-header">
+        <h2>Proof Registry</h2>
+        <div class="filter-controls">
+          <button class="filter-btn active" data-status="proven">Proven</button>
+          <button class="filter-btn active" data-status="partial">Partial</button>
+          <button class="filter-btn active" data-status="skeleton">Skeleton</button>
+          <button class="filter-btn active" data-status="frozen">Frozen</button>
+          <button class="filter-btn active" data-status="empty">Empty</button>
+        </div>
+      </div>
+      <div id="proof-tree" class="proof-tree"></div>
+    </aside>
+
+    <!-- CENTER: CONTENT PANEL -->
+    <section id="main-panel">
+      <div class="panel-header">
+        <div class="file-header">
+          <span id="current-file-name">No file selected</span>
+          <span id="current-file-status" class="status-badge"></span>
+        </div>
+        <div class="file-actions">
+          <button id="view-source-btn">View Source</button>
+          <button id="view-summary-btn" class="active">View Summary</button>
+        </div>
+      </div>
+      <div id="content-view" class="content-view">
+        <div class="empty-state">
+          <p>Select a proof from the navigation panel to view its contents.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- RIGHT: COMPILER PANEL -->
+    <aside id="compiler-panel">
+      <div class="panel-header">
+        <h2>Verification</h2>
+        <div class="button-group">
+          <button id="compile-btn">Compile PXL</button>
+          <button id="clear-build-btn" class="secondary-btn">Clear Build</button>
+        </div>
+      </div>
+      <div id="jscoq-container" class="jscoq-container">
+        <div class="jscoq-placeholder">
+          <p>jsCoq compiler will load here</p>
+          <p class="note">Requires jsCoq integration</p>
+        </div>
+      </div>
+      <div id="compile-status" class="compile-status">
+        <div class="status-line">Status: <span id="compile-status-text">Ready</span></div>
+      </div>
+    </aside>
+
+  </main>
+
+  <footer id="bottom-bar">
+    <span class="footer-text">Formal system verified in Coq · Registry-driven interface · .v files are canonical · <a href="docs/EDITORIAL_POLICY.md" target="_blank" style="color: var(--status-frozen); text-decoration: none;">Editorial Policy</a></span>
+    <span class="footer-meta">Last verified: <span id="last-verified">—</span></span>
+  </footer>
+</body>
+</html>
